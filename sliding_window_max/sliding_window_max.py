@@ -2,10 +2,22 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
-def sliding_window_max(nums, k):
-    # Your code here
+# what if k is longer than array 'nums'? -- iterate through arr and return 1 element in the arr (max)
+# pattern: output length is (nums - k) + 1
 
-    pass
+def sliding_window_max(nums, k):
+    if k > len(nums):
+        return max(nums)
+
+    arr_len = (len(nums)-k) + 1
+
+    for i in range(nums):
+
+            
+
+
+
+
 
 
 if __name__ == '__main__':
