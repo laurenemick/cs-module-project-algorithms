@@ -6,21 +6,23 @@ Returns: a List of integers
 # pattern: output length is (nums - k) + 1
 
 def sliding_window_max(nums, k):
-    if k > len(nums):
+    if len(nums) == 0:
+        return None
+    elif k > len(nums):
         return max(nums)
-
-    arr_len = [0 for _ in range((len(nums)-k) + 1)]
-    new_arr = []
-    start = 0 
-    end = k
-
-    for i in range(len(arr_len)):
-        for num in range(start, end):
-            new_arr.append(nums[num])
-        arr_len[i] = max(new_arr)
+    else:
+        arr_len = [0 for _ in range((len(nums)-k) + 1)]
         new_arr = []
-        start += 1
-        end += 1
+        start = 0 
+        end = k
+
+        for i in range(len(arr_len)):
+            for num in range(start, end):
+                new_arr.append(nums[num])
+            arr_len[i] = max(new_arr)
+            new_arr = []
+            start += 1
+            end += 1
 
     return arr_len
 
