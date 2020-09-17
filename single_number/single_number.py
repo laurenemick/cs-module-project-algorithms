@@ -7,12 +7,36 @@ Returns: an integer
 def single_number(arr):
     return 2 * sum(set(arr)) - sum(arr) 
 
+
+# # In class:
+# # runtime: O(n^2)
+# def single_number(arr):
+#     for num in arr: # O(n)
+#         if arr.count(num) == 1: # O(n)
+#             return num
+
+# # runtime: O(n)
+# def single_number(arr):
+#     # sets are a closely-related cousin to dicts
+#     s = set()
+#     for num in arr: # O(n)
+#         if num in s: # cheap -- O(1)
+#             s.remove(num) # O(1)
+#         else:
+#             s.add(num) # O(1)
+#     return list(s)[0] # one element into a list O(1)
+
     # # Don't understand this...
     # # ^ == Binary XOR Bitwise Operator
     # # https://www.geeksforgeeks.org/find-element-appears-array-every-element-appears-twice/
     # res = arr[0]
     # for i in range(1, len(arr)):
     #     res = res ^ arr[i]
+    # #OR
+    # a = 0
+    # for i in arr:
+    #     a ^= i
+    # return a
 
     # Why didn't this work?
     # count = 0
